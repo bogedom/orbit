@@ -1,3 +1,5 @@
 export const environment = {
-  production: true
+  production: true,
+  binanceApiKey: '',
+  binanceApiUrl: 'https://api.binance.com'
 };
