@@ -1,11 +1,3 @@
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * The content below * * * * * * * * * * * -->
-<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * -->
-<!-- * * * * * * * * * * and can be replaced. * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * Delete the template below * * * * * * * * * * -->
-<!-- * * * * * * * to get started with your project! * * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
 
 <style>
   :host {
@@ -349,6 +341,10 @@
     </svg>
 
   </div>
+
+  <div>Binance BTCUSDT: {{ (symbol$ | async )?.p }}</div>
+  <div>Kraken BTCUSDT: {{ (krakenTicker$ | async)?.[0][0] }}</div>
+  <div>{{ getDiff((symbol$ | async )?.p, ((krakenTicker$ | async)?.[0][0] || 20000)).toFixed(2) }}%</div>
 
   <!-- Resources -->
   <h2>Resources</h2>
