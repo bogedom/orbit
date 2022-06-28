@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { ApiService } from './core/api/api.service';
-import { BinanceSocketService } from './core/binance/binance-socket.service';
-import { KrakenSocketService } from './core/kraken/kraken-socket.service';
+import { BinanceSocketService } from './core/platform/binance/binance-socket.service';
+import { KrakenSocketService } from './core/platform/kraken/kraken-socket.service';
 import { CellClickedEvent, ColDef, GridReadyEvent } from 'ag-grid-community';
 import { Observable } from 'rxjs';
 import { AgGridAngular } from 'ag-grid-angular';

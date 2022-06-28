@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, map } from 'rxjs';
-import { environment } from '../../../environments/environment';
+import { environment } from '../../../../environments/environment';
+import { SupportedSymbol } from '../supported-symbol';
 
 @Injectable({
   providedIn: 'root'
@@ -14,7 +15,7 @@ export class KrakenSocketService {
   constructor() {
   }
 
-  subscribeSymbol(symbol: string) {
+  subscribeSymbol(symbol: SupportedSymbol) {
     this.webSocket = new WebSocket(environment.krakenStreamUrl)
 
     this.webSocket.onopen = (e) => {
@@ -41,7 +42,7 @@ export class KrakenSocketService {
     }
   }
 
-  unsubscribeSymbol() {
+  unsubscribeSymbol(symbol: SupportedSymbol) {
     this.webSocket?.send(JSON.stringify({
       'event': 'unsubscribe',
       'pair': [
